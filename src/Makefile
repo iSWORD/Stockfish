@@ -470,7 +470,9 @@ config-sanity:
 	@test "$(comp)" = "gcc" || test "$(comp)" = "icc" || test "$(comp)" = "mingw" || test "$(comp)" = "clang"
 
 $(EXE): $(OBJS)
-	$(CXX) -o $@ $(OBJS) $(LDFLAGS)
+	echo Compiling $(CLION_EXE_DIR)/$@ ...
+	#$(CXX) -o $@ $(OBJS) $(LDFLAGS)
+	$(CXX) -o $(CLION_EXE_DIR)/Stockfish $(OBJS) $(LDFLAGS)
 
 gcc-profile-prepare:
 	$(MAKE) ARCH=$(ARCH) COMP=$(COMP) gcc-profile-clean
