@@ -471,7 +471,6 @@ config-sanity:
 
 $(EXE): $(OBJS)
 	echo Compiling $(CLION_EXE_DIR)/$@ ...
-	#$(CXX) -o $@ $(OBJS) $(LDFLAGS)
 	$(CXX) -o $(CLION_EXE_DIR)/Stockfish $(OBJS) $(LDFLAGS)
 
 gcc-profile-prepare:
